@@ -1,3 +1,8 @@
+/* Prevent horizontal overflow on all devices */
+html, body {
+  overflow-x: hidden;
+}
+
 /* Reset and global box-sizing */
 * {
   margin: 0;
@@ -19,6 +24,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  /* Allow header elements to wrap if needed */
+  flex-wrap: wrap;
 }
 
 header .logo,
@@ -27,10 +34,10 @@ footer p {
   color: #F9FAF8;
 }
 
-/* Circular logo (adjust size as needed) */
+/* Circular logo */
 .rounded-logo {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -76,21 +83,24 @@ nav a {
   margin-bottom: 1.5rem;
 }
 
+/* Increased spacing for the Listen Now button */
 .listen-now-button {
   background-color: #3882F6;
   color: #F9FAF8;
-  padding: 15px 30px; /* Increased padding */
+  padding: 20px 40px;
   border: none;
   cursor: pointer;
   border-radius: 4px;
   font-size: 18px;
 }
 
+/* Ensure the hero image is responsive */
 .hero-image img {
-  max-width: 400px;
   width: 100%;
+  max-width: 500px; /* Increased hero image size */
   height: auto;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 /* INFO SECTION */
@@ -130,7 +140,7 @@ nav a {
   margin-bottom: 0.5rem;
 }
 
-/* NEW: Image row for three photos */
+/* Image row for three photos */
 .image-row {
   display: flex;
   justify-content: center;
@@ -139,8 +149,8 @@ nav a {
 }
 
 .image-row img {
-  max-width: 250px;
   width: 100%;
+  max-width: 250px;
   height: auto;
   border-radius: 8px;
   object-fit: cover;
@@ -204,4 +214,72 @@ footer {
 footer p {
   color: #F9FAF8;
   font-size: 16px;
+}
+
+/* MEDIA QUERIES FOR MOBILE DEVICES (Preserving layout columns) */
+@media (max-width: 768px) {
+  header {
+    padding: 0.5rem 1rem;
+  }
+  .rounded-logo {
+    width: 150px;
+    height: 150px;
+  }
+  nav a {
+    font-size: 16px;
+  }
+  .hero {
+    padding: 2rem 1rem;
+  }
+  .hero-text h1 {
+    font-size: 32px;
+  }
+  .hero-text p {
+    font-size: 16px;
+  }
+  .hero-image img {
+    max-width: 400px;
+  }
+  .info-section {
+    padding: 2rem 1rem;
+  }
+  .info-section h2 {
+    font-size: 28px;
+  }
+  .card {
+    min-width: 200px;
+    max-width: 250px;
+  }
+  .image-row {
+    gap: 10px;
+  }
+  .image-row img {
+    max-width: 200px;
+  }
+  .quote-section {
+    padding: 2rem 1rem;
+  }
+  .quote {
+    font-size: 28px;
+  }
+  .author {
+    font-size: 16px;
+  }
+  .cta-section {
+    padding: 2rem 1rem;
+  }
+  .cta-section h2 {
+    font-size: 28px;
+  }
+  .cta-section p {
+    font-size: 16px;
+  }
+  .cta-section button {
+    padding: 0.75rem 1.5rem;
+    font-size: 16px;
+  }
+  footer {
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+  }
 }
