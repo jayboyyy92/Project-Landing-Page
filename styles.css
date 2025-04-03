@@ -1,4 +1,4 @@
-/* Prevent horizontal overflow on all devices */
+/* Prevent horizontal overflow for safety */
 html, body {
   overflow-x: hidden;
 }
@@ -24,8 +24,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  /* Allow header elements to wrap if needed */
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* allow wrapping if needed */
 }
 
 header .logo,
@@ -94,10 +93,10 @@ nav a {
   font-size: 18px;
 }
 
-/* Ensure the hero image is responsive */
+/* Hero image - increased size */
 .hero-image img {
   width: 100%;
-  max-width: 500px; /* Increased hero image size */
+  max-width: 500px;
   height: auto;
   border-radius: 8px;
   object-fit: cover;
@@ -117,13 +116,15 @@ nav a {
   margin-bottom: 2rem;
 }
 
+/* Info Cards Container */
 .info-cards {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Desktop: normal wrapping */
 }
 
+/* Info Cards */
 .card {
   background-color: #E5E7EB;
   padding: 2rem;
@@ -140,12 +141,16 @@ nav a {
   margin-bottom: 0.5rem;
 }
 
-/* Image row for three photos */
+/* IMAGE ROW for three photos - horizontal scrolling enabled */
 .image-row {
   display: flex;
   justify-content: center;
   gap: 20px;
   margin-top: 2rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  flex-wrap: nowrap; /* force items into a single row */
+  padding-bottom: 1rem; /* space for scrollbar */
 }
 
 .image-row img {
@@ -216,7 +221,8 @@ footer p {
   font-size: 16px;
 }
 
-/* MEDIA QUERIES FOR MOBILE DEVICES (Preserving layout columns) */
+/* MEDIA QUERIES FOR MOBILE DEVICES */
+/* Preserving a desktop-like layout while enabling horizontal scrolling for forced columns */
 @media (max-width: 768px) {
   header {
     padding: 0.5rem 1rem;
@@ -246,12 +252,24 @@ footer p {
   .info-section h2 {
     font-size: 28px;
   }
+  /* Make info cards horizontally scrollable */
+  .info-cards {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding-bottom: 1rem;
+  }
   .card {
+    flex: 0 0 auto;
     min-width: 200px;
     max-width: 250px;
   }
+  /* Image row adjustments */
   .image-row {
     gap: 10px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
   }
   .image-row img {
     max-width: 200px;
