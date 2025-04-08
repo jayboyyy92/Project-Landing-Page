@@ -27,13 +27,6 @@ Check out the live version here:
 - CSS3
 - Google Fonts
 
----
-
-## 📸 Screenshots
-
-| Desktop View | Mobile View |
-|--------------|-------------|
-| ![Desktop Screenshot](https://jayboyyy92.github.io/Project-Landing-Page/assets/desktop-view.png) | ![Mobile Screenshot](https://jayboyyy92.github.io/Project-Landing-Page/assets/mobile-view.png) |
 
 ---
 
