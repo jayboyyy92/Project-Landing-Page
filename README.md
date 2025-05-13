@@ -1,7 +1,5 @@
 # Project Landing Page
 
-![Website Screenshot](https://jayboyyy92.github.io/Project-Landing-Page/iCloudDrive/Desktop/website.png)
-
 A clean and modern landing page built with HTML and CSS. This project is designed to demonstrate a strong grasp of responsive design, layout techniques, and basic front-end development skills.
 
 ## 🚀 Live Demo
